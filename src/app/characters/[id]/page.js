@@ -19,7 +19,7 @@ export default function CharacterDetail({ params }) {
   }
 
   return (
-    <div>
+    <div className="flex justify-center">
       <h1>Detalle del Personaje: {character.name}</h1>
       <ul>
         <li>Nombre: {character.name}</li>
