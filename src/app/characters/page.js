@@ -15,15 +15,15 @@ export default function Characters() {
   }, []);
 
   return (
-    <div>
-      <h1>Listado de Personajes</h1>
-      <ul>
+    <div >
+      <h1 className="flex justify-center font-bold">Listado de Personajes</h1>
+      <ul className="flex flex-wrap justify-center px-6 py-4">
         {characters.map((character) => {
           const arrayId = character.url.split("/");
           const idChracter = arrayId[arrayId.length - 2];
           return (
-            <div key={character.idChracter}>
-              <Link href={`/characters/${idChracter}`}>{character.name}</Link>
+            <div key={character.idChracter} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 py-2 text-accent rounded overflow-hidden shadow-lg">
+              <Link href={`/characters/${idChracter}`} className="font-bold text-xl mb-2">{character.name}</Link>
               <li>Nombre: {character.name}</li>
               {character.eye_color && character.eye_color !== "n/a" && (
                 <li>Color de ojos: {character.eye_color}</li>

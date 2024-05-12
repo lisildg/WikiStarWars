@@ -20,16 +20,16 @@ export default function FilmDetail({ params }) {
   }
 
   return (
-    <div className="flex justify-center">
-      <h1>Detalle del Film: {film.title}</h1>
-      <ul>
-        <li>Episode: {film.episode_id}</li>
+    <div >
+      <h1 className="flex justify-center font-bold">{film.title}</h1>
+      <ul className="w-full sm:w-1/2  lg:w-1/4 xl:w-1/5 py-2 text-accent rounded overflow-hidden shadow-lg">
+        <li>Episodio: {film.episode_id}</li>
         
           <li>Director: {film.director}</li>
-     
-          <ul>
+        <h1>Personajes:</h1>
+          <ul >
             {film.characters.map(character => (
-              <li key={character.url}>
+              <li key={character.url}>  
                 <Link href={`/characters/${character.url.split('/').slice(-2)[0]}`}>
                   {character.name}
                 </Link>
