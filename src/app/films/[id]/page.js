@@ -24,8 +24,9 @@ export default function FilmDetail({ params }) {
   return (
     <div className="max-w-screen-md mx-auto">
       <h1 className="text-center font-bold text-2xl my-4">{film.title}</h1>
-      <div className="rounded-lg overflow-hidden shadow-lg shadow-accent">
-        <div className="px-4 py-4">
+      <div className="flex justify-center">
+      <div className="rounded-lg overflow-hidden flex justify-center shadow-lg mb-4 shadow-accent">
+        <div className="px-20 py-4">
           <div className="mb-4">
             <Image src="/imgFilm.jpg" height={200} width={100} />
           </div>
@@ -38,18 +39,19 @@ export default function FilmDetail({ params }) {
             <p>{film.director}</p>
           </div>
           <div className="mb-4">
-            <h2 className="font-bold text-lg">Personajes:</h2>
+            <h2 className="font-bold text-lg ">Personajes:</h2>
             <ul>
               {film.characters.map((character) => (
                 <li key={character.url} className="mb-2">
                   <Link href={`/characters/${character.url.split("/").slice(-2)[0]}`}>
-                    <span className="text-highlight hover:underline">{character.name}</span>
+                    <span className="text-highlight hover:underline ">{character.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
