@@ -3,6 +3,7 @@ import { getFilmById } from "@/utils/api";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Loader from "@/components/Loader";
 
 export default function FilmDetail({ params }) {
   const { id } = params;
@@ -17,7 +18,7 @@ export default function FilmDetail({ params }) {
   }, []);
 
   if (!film) {
-    return <div>Cargando...</div>;
+    return <div><Loader /></div>;
   }
 
   return (
