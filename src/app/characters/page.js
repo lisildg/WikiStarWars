@@ -17,37 +17,37 @@ export default function Characters() {
   }, []);
 
   return (
-    <div>
-      <h1 className="flex justify-center font-bold">Listado de Personajes</h1>
+    <div className="container mx-auto px-4">
+      <h1 className="text-center font-bold text-2xl mt-8 mb-4">Listado de Personajes</h1>
       {characters.length === 0 ? (
         <div className="flex items-center justify-center h-screen">
           <Loader />
         </div>
       ) : (
-        <ul className="flex flex-wrap justify-center px-6 py-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {characters.map((character) => {
             const arrayId = character.url.split("/");
             const idChracter = arrayId[arrayId.length - 2];
             return (
-              <div
-                key={character.idChracter}
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 py-2 text-accent rounded overflow-hidden shadow-lg"
-              >
-                <Image src="/imgCharcter.jpg" height={200} width={100} />{" "}
-                <Link
-                  href={`/characters/${idChracter}`}
-                  className="font-bold text-xl mb-2"
-                >
-                  {character.name}
-                </Link>
-                <li>Nombre: {character.name}</li>
-                {character.eye_color && character.eye_color !== "n/a" && (
-                  <li>Color de ojos: {character.eye_color}</li>
-                )}
-                {character.gender && character.gender !== "n/a" && (
-                  <li>Género: {character.gender}</li>
-                )}
-              </div>
+              <li key={character.idChracter} className="flex flex-col justify-between p-4  rounded-lg shadow-lg shadow-accent">
+                <div className="flex justify-center mb-4">
+                  <Image src="/imgCharcter.jpg" alt="Character Image" height={200} width={100} />
+                </div>
+                <div className="text-center">
+                  <Link href={`/characters/${idChracter}`} className="font-bold text-secondary hover:underline">
+                    {character.name}
+                  </Link>
+                  <ul className="text-left mt-2">
+                    <li><span className="font-bold">Nombre:</span> {character.name}</li>
+                    {character.eye_color && character.eye_color !== "n/a" && (
+                      <li><span className="font-bold">Color de ojos:</span> {character.eye_color}</li>
+                    )}
+                    {character.gender && character.gender !== "n/a" && (
+                      <li><span className="font-bold">Género:</span> {character.gender}</li>
+                    )}
+                  </ul>
+                </div>
+              </li>
             );
           })}
         </ul>

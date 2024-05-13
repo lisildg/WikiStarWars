@@ -17,26 +17,29 @@ export default function Films() {
   }, []);
 
   return (
-    <div>
-      <h1 className="flex justify-center font-bold">Listado de Films</h1>
+    <div className="container mx-auto px-4">
+      <h1 className="text-center font-bold text-2xl mt-8 mb-4">Listado de Films</h1>
       {films.length === 0 ? (
         <div className="flex items-center justify-center h-screen">
           <Loader />
         </div>
       ) : (
-        <ul className="flex flex-wrap justify-center px-6 py-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {films.map((film) => {
             const arrayId = film.url.split("/");
             const idFilm = arrayId[arrayId.length - 2];
             return (
-              <div
-                key={film.idFilm}
-                className="w-full sm:w-1/2  lg:w-1/4 xl:w-1/5 flex justify-center  py-2 text-accent rounded overflow-hidden shadow-lg"
-              >
-                <Image src="/imgFilm.jpg" height={200} width={100} />{" "}
-                <Link href={`/films/${idFilm}`}>{film.title}</Link>
-                <li>Episodio: {film.episode_id}</li>
-              </div>
+              <li key={film.idFilm} className="flex flex-col items-center justify-between p-4  rounded-lg shadow-lg shadow-accent">
+                <div className="flex justify-center mb-4">
+                  <Image src="/imgFilm.jpg" alt="Film Poster" height={200} width={100} />
+                </div>
+                <div className="text-center">
+                  <Link href={`/films/${idFilm}`} className="font-bold hover:underline">
+                    {film.title}
+                  </Link>
+                  <p>Episodio: {film.episode_id}</p>
+                </div>
+              </li>
             );
           })}
         </ul>
