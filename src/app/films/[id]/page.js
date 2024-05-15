@@ -37,7 +37,7 @@ export default function FilmDetail({ params }) {
       <div className="max-w-screen-md mx-auto">
         <h1 className="text-center font-bold text-2xl my-4">{film.title}</h1>
         <div className="flex justify-center">
-          <div className="rounded-lg overflow-hidden flex justify-center shadow-lg mb-4 shadow-accent">
+          <div className="rounded-lg overflow-hidden flex justify-center shadow-lg gap-4 mb-8 shadow-accent">
             <div className="px-20 py-4">
               <div className="mb-4">
                 <Image src="/imgFilm.jpg" height={200} width={100} />

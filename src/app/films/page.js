@@ -33,7 +33,7 @@ export default function Films() {
             <Loader />
           </div>
         ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-8">
             {films.map((film) => {
               const arrayId = film.url.split("/");
               const idFilm = arrayId[arrayId.length - 2];

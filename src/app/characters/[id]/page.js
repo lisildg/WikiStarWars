@@ -38,7 +38,7 @@ export default function CharacterDetail({ params }) {
           <h1 className="text-center font-bold text-2xl my-4">
             Detalles del Personaje: {character.name}
           </h1>
-          <div className="rounded-lg overflow-hidden flex justify-center shadow-lg mb-4 shadow-accent">
+          <div className="rounded-lg overflow-hidden flex justify-center shadow-lg shadow-accent gap-4 mb-8">
             <div className="px-4 py-4">
               <div className="mb-4">
                 <Image src="/imgCharcter.jpg" height={200} width={100} />

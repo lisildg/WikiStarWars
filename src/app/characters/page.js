@@ -33,7 +33,7 @@ export default function Characters() {
             <Loader />
           </div>
         ) : (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-8">
             {characters.map((character) => {
               const arrayId = character.url.split("/");
               const idChracter = arrayId[arrayId.length - 2];

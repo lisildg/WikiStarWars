@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [loadingButton, setLoadingButton] = useState(null);
@@ -63,6 +64,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
